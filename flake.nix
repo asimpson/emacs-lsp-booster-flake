@@ -11,7 +11,7 @@
 
   outputs = { nixpkgs, ... }:
     let overlay = final: prev: {
-          emacs-lsp-booster = final.callPackage ./default.nix { };
+          emacs-lsp-booster = final.callPackage ./package.nix { };
         };
         supportedSystems = [ "aarch64-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ];
         forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
